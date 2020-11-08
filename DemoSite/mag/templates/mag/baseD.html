@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Примерный сайт{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <h1>Сайт</h1>
+      {% if user.is_authenticated %}
+        <a href="{% url 'mag:logout' %}">Выйти</a>
+      {% else %}
+        <a href="{% url 'mag:login' %}">Войти</a> / <a href="{% url 'mag:signup' %}">Зарегистрироватся</a>
+      {% endif %}
+      <hr>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+  </body>
+</html>

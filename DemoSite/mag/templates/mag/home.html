@@ -1,0 +1,23 @@
+{% extends 'mag/baseD.html' %}
+
+{% block content %}
+  <h2>Добрый день, {{ user.username }}!</h2>
+<p> 
+
+</p>
+<p>
+Хотите оставить коментарий?
+</p>
+<form action="" method="post">
+    <label for="comment">Комментарий: </label>
+    <input id="comment" type="text" name="comment" maxlength="100"value="{{ current_name }}" >
+    <input type="submit" value="OK">
+</form>
+<p>
+
+
+{{ comment|safe }}
+
+</p>
+
+{% endblock %}
